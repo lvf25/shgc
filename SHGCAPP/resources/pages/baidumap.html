@@ -1,0 +1,1053 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+				body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+				#map label{max-width:none;}
+		</style>
+		<style type="text/css">.anchorBL{display:none; }</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=t8X9yI4SncGcVwHbn5qck3C8nCsOG2nK"></script>
+		<!-- jquery -->
+		<!-- <script type="text/javascript" src="jquery.2.0.0.js"></script> -->
+		<!-- 引用百度的jquery，加载速度快 -->
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+
+		<script type="text/javascript" src="lushu_min.js"></script>
+		<title>地图展示</title>
+
+</head>
+<body>
+<div id="allmap"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+// 百度地图API功能
+var map = new BMap.Map("allmap",{enableMapClick:false});
+//初始化地图位置和地图级别
+map.centerAndZoom(new BMap.Point(113.12 ,23.02),19);
+
+// map.disableScrollWheelZoom();           //禁用滚轮缩放
+map.disableDoubleClickZoom();             //禁用双击放大
+
+//隐藏百度地图图标
+$('#allmap div.anchorBL').hide();
+
+//获取地面站平板的位置
+var QGClng;
+var QGClat;
+var mk;
+let myIcon = new BMap.Icon('qgcaddr.png', new BMap.Size(100,80), {anchor: new BMap.Size(15.5, 43)});
+let new_qgcIcon = new BMap.Icon('location_locked.png', new BMap.Size(100,80), {anchor: new BMap.Size(15.5, 43)});
+
+let geolocation = new BMap.Geolocation();
+geolocation.getCurrentPosition(function(r){
+	if(this.getStatus() == BMAP_STATUS_SUCCESS){
+		//添加地面站定位图标
+        // let myIcon = new BMap.Icon('qgcaddr.png', new BMap.Size(100,80), {anchor: new BMap.Size(15.5, 43)});
+        let convertor = new BMap.Convertor();
+        let pointArr = [];
+        pointArr.push(r.point);
+        convertor.translate(pointArr, 1, 5, function (data){
+            if(data.status === 0) {
+                mk = new BMap.Marker(data.points[0], {icon:myIcon});
+                QGClng = data.points[0].lng;
+                QGClat = data.points[0].lat;
+                map.addOverlay(mk);
+                map.setCenter(data.points[0]);
+                //mk.addEventListener("click", preventBubbling);
+            }
+        });
+	}
+	else{
+		alert('failed'+this.getStatus());
+	}
+} ,{enableHighAccuracy: true});
+
+
+//与qml建立连接
+var num = 0;
+var re_num = 0;
+var pt_oldlng;
+var pt_oldlat;
+var pt_lng;
+var pt_lat;
+var home_lng;
+var home_lat;
+var londata = 0;
+var latdata = 0;
+var headata = 0;
+// var poi_route;     //存放点标注，可执行删除
+// var fly_line;     //存放线标注，可执行删除
+var mymap;
+var waypoint_mode = 1;// 1 最后添加，2 前面添加， 3 后面添加;
+var items = [];   //存放坐标点，画航线
+var rout_list = [];
+// var line_list = [];
+var new_poi_route = [];  //反序
+var new_num = [];
+var new_label_list = [];
+var distance_list = [];
+var white_poi_0;
+var white_poi_1;
+var pam=0;
+
+
+var poi_start = null;
+var poi_home = null;
+var rout_line;
+var edit_points = [];
+
+
+//无人机原始坐标转化后坐标
+var GCS_baidu_lng;
+var GCS_baidu_lat;
+
+var redraw = false;
+
+var start_Icon = new BMap.Icon('pt_start.png', new BMap.Size(30, 45), {anchor: new BMap.Size(15.5, 43)});
+var home_Icon = new BMap.Icon('home.png', new BMap.Size(30, 45), {anchor: new BMap.Size(15.5, 43)});
+var poi_Icon = new BMap.Icon('blue.png', new BMap.Size(35, 45), {anchor: new BMap.Size(15.5, 43)});
+var flightIcon = new BMap.Icon('flightaddr.png', new BMap.Size(50,40));
+var new_flightIcon = new BMap.Icon('plane_locked.png', new BMap.Size(68,68));
+var mks = null;
+
+var LogShow = false;
+
+var LogPoint = [];
+var flightLine;
+var setairCenter;
+var setqgcCenter;
+
+var allItems = [];
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////
+
+
+
+
+// window.onload = function()
+$(function()
+{
+    num = 0;
+    new QWebChannel(qt.webChannelTransport, function(channel) {
+        // 在channel.object下，所有发布的对象在通道中都是可用的
+        // 在附加的WebChannel.id属性中设置的标识符。
+
+        mymap = channel.objects.map;
+
+        mymap.clearLoglines.connect(function(){
+        	LogPoint = [];
+            addFlightLine();
+
+        });
+
+        //连接信号
+        mymap.latSignal.connect(function(lat) {
+            latdata = lat;
+        });
+        mymap.lonSignal.connect(function(lon){
+            londata = lon;
+        });
+
+        mymap.headingRecvDataToHtml.connect(function(headingData){
+            headata = headingData;
+        })
+
+        //连接画航点信号
+        mymap.drawRoutePlan.connect(function(){
+            drawRoutePoint();
+        });
+
+        //删除画航点功能
+        mymap.removePointFun.connect(function(){
+            removePointEvent();
+        });
+
+        //连接地图类型修改信号
+        mymap.showNormalMap.connect(function(){
+            normalMap();
+        });
+        mymap.showHybridMap.connect(function(){
+            hybridMap();
+        });
+
+        //连接地图缩放信号
+        // mymap.changeMapScale.connect(function(value){
+        //     mapScalechange(value);
+        // });
+
+        //连接地图回中信号
+        mymap.setAircraftCenter.connect(function(str){
+            setairCenter = str;
+            aircraftCenter(str);
+        });
+
+
+        mymap.setHomeCenter.connect(function(){
+            homeCenter();
+        });
+        mymap.setQGCCenter.connect(function(str){
+        	setqgcCenter = str
+            QGCCenter();
+        });
+        mymap.setStartPoiCenter.connect(function(){
+            startPoiCenter();
+        });
+
+        // mymap.cancleQGCCenter.connect(function(){
+        //     cancleQGCCenter();
+        // });
+
+        //连接显示航点信号
+        mymap.showPointData.connect(function(){
+            showPointData();
+        });
+        mymap.hidePointData.connect(function(){
+            hidePointData();
+        });
+
+        //连接显示航迹信号
+        mymap.showLineData.connect(function(){
+            showLineData();
+        });
+        mymap.hideLineData.connect(function(){
+            hideLineData();
+        });
+
+        //连接航点删除信号
+        // mymap.delete_point.connect(function(){
+        //     delete_point();
+        // });
+
+        // mymap.delete_allpoints.connect(function(){
+        //     delete_allpoints();
+
+        // });
+
+        //点击飞行监控和校准，删除航点航迹
+        // mymap.flyctrClicked.connect(function(){
+        //     removePointEvent();
+        // });
+        // mymap.actadjClicked.connect(function(){
+        //     removePointEvent();
+        // });
+
+        // // 返回航点最大值
+        // mymap.senHtmlNUmMax.connect(function(numMax){
+        //     // re_num = numMax;
+        //     num = numMax;
+        // });
+
+        // //接收数据库中航点信息
+        // mymap.lnglatJson.connect(function(strJson){
+        //     // jsonToStr(strJson);
+        // });
+
+        // //反序
+        mymap.reverseOrder.connect(function(){
+            reverse_order();
+        })
+
+        // //测距
+        mymap.rulerMeasuring.connect(function(){
+            dis_measuring();
+        });
+        mymap.cancleMeasuring.connect(function(){
+            cancle_measure();
+        });
+
+        // //打开文件
+        // mymap.fileToMap.connect(function(strJson){
+        //     fileToMap(strJson);
+        // });
+
+        // //删除航点
+        // mymap.deleteHtmlPoint.connect(function(seq_no){
+        //     deleteHtmlPoint(seq_no);
+        // });
+
+        // //添加航点
+        // mymap.addHtmlPoint.connect(function(seq_no,lng, lat){
+        //     addHtmlPoint(seq_no,lng, lat);
+        // });
+
+        // //修改航点
+        // mymap.upHtmlPointData.connect(function(seq_no,lng, lat){
+        //     upHtmlPointData(seq_no,lng, lat);
+        // });
+
+        // //上移航点
+        // mymap.upPointHtml.connect(function(seq_no){
+        // 	upPointHtml(seq_no);
+        // });
+
+        // mymap.downPointHtml.connect(function(seq_no){
+        // 	downPointHtml(seq_no);
+        // });
+
+        // //设置返航点
+        // mymap.rpToStart.connect(function(){
+        //     rpToStart();
+        // });
+        // mymap.rpToCurrent.connect(function(){
+        //     rpToCurrent();
+        // });
+        // mymap.rpToSelf.connect(function(){
+        //     rpToSelf();
+        // });
+
+        mymap.openLogAnctionToHtml.connect(function(str){
+
+                LogShow = str;
+        });
+
+        mymap.drawLine.connect(function(waypointnum,lng, lat){
+    		pointdrawLine(waypointnum,lng, lat)
+        });
+
+    });
+
+    var new_point = new BMap.Point(londata,latdata);
+    
+    mks = new BMap.Marker(new_point,{icon:flightIcon,offset:new BMap.Size(0,0)});
+    map.addOverlay(mks);
+
+
+    var t1=window.setInterval(theLocation, 1000);
+
+
+    var oDiv = document.getElementById("allmap");
+    oDiv.onclick = function(){
+        mymap.sendData();
+    }
+
+    //接受qml发送的信号，对无人机位置进行标注
+    function theLocation(){
+        if(londata ==0 && latdata == 0)
+        {
+            return;
+        }
+        var new01_point = new BMap.Point(londata,latdata);
+        // alert(new01_point.lng);
+        // var flightIcon = new BMap.Icon('flightaddr.png', new BMap.Size(30,40), {anchor: new BMap.Size(15.5, 43)});
+        // var mks = new BMap.Marker(new_point,{icon:flightIcon});
+        var convertor = new BMap.Convertor();
+        var pointArr = [];
+        pointArr.push(new01_point);
+        convertor.translate(pointArr, 1, 5, function (data)
+        {
+            if(data.status === 0) {
+                GCS_baidu_lat = data.points[0].lat;
+                GCS_baidu_lng = data.points[0].lng;
+
+                mks.setPosition(data.points[0]);
+                mks.setRotation(headata);
+                mks.addEventListener("click", function(){
+					e.domEvent.stopPropagation();
+                });
+
+                if(LogShow)
+                {
+                    LogPoint.push(data.points[0]);
+                    addFlightLine();
+
+                }
+                if(setairCenter)
+                {
+                    map.panTo(mks.getPosition());
+                }
+            }
+        });
+    };
+
+  //   //批量编辑删除航点
+  //   function deleteHtmlPoint(seq_no)
+  //   {
+		// map.removeOverlay(rout_list[seq_no-1]);
+		// rout_list.splice(seq_no-1, 1);
+		// points.splice(seq_no-1, 1);
+
+		// addPolyline();
+		// mymap.upDataNum();//更新Num数
+
+		// for(var i = 2; i<=rout_list.length ; i++)
+		// {
+  //           if(rout_list[i-1].getLabel() !== null)
+  //           {
+  //               rout_list[i-1].getLabel().setContent(i);
+  //           }
+		// }
+  //   }
+
+
+    //上移航点
+    // function upPointHtml(seq_no)
+    // {
+    // 	var upmarker = rout_list[seq_no - 1];
+    // 	var downMarker = rout_list[seq_no - 2];
+    // 	rout_list.splice(seq_no - 2,2);
+    // 	rout_list.splice(seq_no -2,0,upmarker,downMarker);
+
+    // 	upmarker.getLabel().setContent(seq_no - 1);
+    // 	downMarker.getLabel().setContent(seq_no);
+
+    // 	var upPoint = points[seq_no - 1];
+    // 	var downPoint = points[seq_no - 2];
+    // 	points.splice(seq_no - 2,2);
+    // 	points.splice(seq_no - 2,0,upPoint,downPoint);
+
+    //     addPolyline();
+    // }
+
+
+    //下移航点
+    // function downPointHtml(seq_no)
+    // {
+    // 	var upmarker = rout_list[seq_no];
+    // 	var downMarker = rout_list[seq_no - 1];
+    // 	rout_list.splice(seq_no - 1,2);
+    // 	rout_list.splice(seq_no -1,0,upmarker,downMarker);
+
+    // 	upmarker.getLabel().setContent(seq_no);
+    // 	downMarker.getLabel().setContent(seq_no + 1);
+
+    // 	var upPoint = points[seq_no];
+    // 	var downPoint = points[seq_no - 1];
+    // 	points.splice(seq_no - 1,2);
+    // 	points.splice(seq_no - 1,0,upPoint,downPoint);
+    //     addPolyline();
+    // }
+
+
+    //批量编辑，添加航点
+   //  function addHtmlPoint(seq_no,lng, lat)
+   //  {
+   //      var add_point = new BMap.Point(lng, lat);
+   //      var add_point_marker = new BMap.Marker(add_point, {icon:poi_Icon});
+   //      var label = new BMap.Label(seq_no, {offset:new BMap.Size(15.5,7)});
+   //      label.setStyle({
+   //          background:'none',
+   //          color:'#015572',
+   //          border:'none',
+   //          transform:'translateX(-50%)',
+   //      });
+
+   //      add_point_marker.setLabel(label);
+
+   //      // add_point_marker.enableDragging();
+   //      // add_point_marker.addEventListener("dragend", function(p){
+   //      // 	// mymap.upPointData(p.point.lng, p.point.lat);
+   //      // 	addPolyline();
+   //      // 	//mymap.sendLonLatData(point_type, waypoint_mode, p.point.lng, p.point.lat);
+   //      // });
+
+
+   //      var label_num = seq_no;
+   //      // add_point_marker.addEventListener("click", preventBubbling);
+   //      add_point_marker.addEventListener("click", function(){
+			// e.domEvent.stopPropagation(add_point_marker.getLabel().content);
+			// preventBubbling(seq_no);
+
+   //      });
+
+   //      map.addOverlay(add_point_marker);
+
+
+   //      rout_list.splice(seq_no -1,0,add_point_marker);
+   //      points.splice(seq_no -1,0,add_point);
+
+   //      addPolyline();
+   //      mymap.upDataNum();//更新Num数
+
+   //      if(seq_no < rout_list.length)
+   //      {
+   //          for (var i = 1,len = rout_list.length; i < len; i++) {
+   //              if(rout_list[i].getLabel() !== null)
+   //              {
+   //                  rout_list[i].getLabel().setContent(i+1);
+   //              }
+   //          }
+   //      }
+   //  }
+
+
+    //修改航点
+    // function upHtmlPointData(seq_no,lng, lat)
+    // {
+    //     var new_point = new BMap.Point(lng, lat);
+    //     rout_list[seq_no-1].setPosition(new_point);
+    //     points.splice(seq_no-1,1,new_point);
+    //     addPolyline();
+    // }
+
+
+
+
+    function pointdrawLine(waypointnum,lng,lat)
+    {
+        var point = new BMap.Point(lng, lat);
+
+        var convertor = new BMap.Convertor();
+        var pointArr = [];
+        pointArr.push(point);
+        if(waypointnum == 0)
+        {
+            delete_allpoints()
+            convertor.translate(pointArr, 1, 5, function (baiduPoint)
+            {
+
+                poi_home = new BMap.Marker(baiduPoint.points[0], {icon:home_Icon});
+
+                map.addOverlay(poi_home);
+                poi_home.enableDragging();
+                poi_home.addEventListener("click", function(e){
+                    e.domEvent.stopPropagation();
+                    preventBubbling(0);
+                }); 
+
+                poi_start = new BMap.Marker(baiduPoint.points[0], {icon:start_Icon});
+
+                map.addOverlay(poi_start);
+                poi_start.addEventListener("click", function(e){
+                    e.domEvent.stopPropagation();
+                    preventBubbling(1);}); 
+            });
+
+        }else{
+            convertor.translate(pointArr, 1, 5, function (baiduPoint)
+            {
+
+                var newpoint = new BMap.Point(baiduPoint.points[0].lng,baiduPoint.points[0].lat);
+                // alert(newpoint.lng);
+                var poi_route = new BMap.Marker(newpoint, {icon:poi_Icon});
+
+                var label = new BMap.Label(waypointnum, {offset:new BMap.Size(15.5,7)});
+                label.setStyle({
+                    background:'none',
+                    color:'#015572',
+                    border:'none',
+                    transform:'translateX(-50%)',
+                });
+                poi_route.setLabel(label);
+                map.addOverlay(poi_route);
+
+
+                rout_list.push(poi_route);
+                // items.push(poi_route.getPosition());
+                // edit_points.push(poi_route.getPosition());
+
+                items[waypointnum-1] = newpoint;
+
+                addPolyline();
+
+
+                poi_route.addEventListener("click", function(e){
+                    e.domEvent.stopPropagation();
+                    preventBubbling(poi_route.getLabel().content);
+                });
+
+            });
+        }
+    }
+
+
+    //添加起飞点和航点
+    function showInfo(e){
+
+        if(e.overlay){
+        }else{
+            var point = new BMap.Point(e.point.lng, e.point.lat);
+            var convertor = new BMap.Convertor();
+            var pointArr = [];
+            pointArr.push(point);
+
+            convertor.translate(pointArr, 1, 5, function (baiduPoint)
+            {
+                var gps = new BMap.Point(2* point.lng-baiduPoint.points[0].lng,2* point.lat-baiduPoint.points[0].lat);
+                mymap.sendLonLatData(gps.lng, gps.lat);
+            });
+
+        }
+    }
+
+    
+    //反序
+    function reverse_order(){
+
+        // for(var i=0; i< label_list.length; i++){
+        //     // map.removeOverlay(label_list[i]);               
+        //     map.removeOverlay(poi_start);
+        //     //label_list = [];
+            
+        //     new_num[i] = num +1 - new_num[i];
+        //     //alert(new_num);
+        //     var new_label = new BMap.Label(new_num[i], {offset:new BMap.Size(15.5,7)});
+        //     new_label.setStyle({
+        //         background:'none',
+        //         color:'#015572',
+        //         border:'none',
+        //         transform:'translateX(-50%)',
+        //     });
+            
+        //     new_label_list.push(new_label);
+        //     new_poi_route[i].setLabel(new_label);
+        //     //map.removeOverlay(new_label[i]);
+        //     label_list[i] = new_label_list[i];
+        // }
+        // new_label_list = [];
+       //alert(points);
+    }
+
+	//添加航点
+	function drawRoutePoint(){                     
+		map.addEventListener("click", showInfo);
+	}
+
+	//移除画点事件
+	function removePointEvent(){
+		map.removeEventListener("click", showInfo);
+	}
+
+	//添加航线
+	function addPolyline(){
+		map.removeOverlay(rout_line); 
+		var fly_line = new BMap.Polyline(items, {strokeWeight:6, strokeColor:'#03A8F7', strokeOpacity:'100%'});
+		rout_line = fly_line;
+		map.addOverlay(rout_line);
+		// fly_line.addEventListener("click", preventBubbling);
+		//line_list.push(fly_line);
+	}
+
+
+    //添加无人机轨迹
+    function addFlightLine(){
+        map.removeOverlay(flightLine);
+        var fly_line = new BMap.Polyline(LogPoint, {strokeWeight:4, strokeColor:'#E95615', strokeOpacity:'100%'});
+        flightLine = fly_line;
+        map.addOverlay(flightLine);
+    }
+
+
+	//删除全部航点航迹
+	function delete_allpoints(){
+		for(var i=0; i< rout_list.length; i++){
+			map.removeOverlay(rout_list[i]);
+		}
+		rout_list = [];
+		items = [];
+        allItems = [];
+
+		poi_home = null;
+		poi_start = null;
+		map.removeOverlay(poi_home); //删除home点
+        map.removeOverlay(poi_start);
+		map.removeOverlay(rout_line); //删除航线
+
+	}
+
+	//删除选中航点航迹
+	function delete_point(){
+	// this.openInfoWindow(this._infoWindow);
+	}
+
+
+    //打开文件
+    function fileToMap(strJson){
+        var Str = JSON.parse(strJson);
+        var len_max = Str.longitude.length;
+
+        if(!redraw){
+            redraw = true;
+            let pointArr = [];
+            for(var i=0; i<len_max; i++){
+                num = Number(Str.seq[i]);
+                var re_lng = Number(Str.longitude[i]);
+                var re_lat = Number(Str.latitude[i]);
+                var re_point = new BMap.Point(re_lng, re_lat);
+                let convertor = new BMap.Convertor();
+                pointArr.push(re_point);
+                convertor.translate(pointArr, 3, 5, function (data){
+                    if(data.status === 0) {
+                        for (var j = 0; j < data.points.length; j++) {
+                           re_lng = data.points[j].lng;
+                           re_lat = data.points[j].lat;
+                           re_point = new BMap.Point(re_lng, re_lat);
+                        }
+                    }
+                });
+                if(re_lng != 0 && re_lat != 0){
+                    if(i == 0){
+                        pt_lng = re_lng;
+                        pt_lat = re_lat;
+                        home_lng = re_lng;
+                        home_lat = re_lat;
+
+                        poi_start = new BMap.Marker(re_point, {icon:start_Icon});
+                        poi_home = new BMap.Marker(re_point, {icon:home_Icon});
+                        point_type = 1;
+                        map.addOverlay(poi_start);
+                        poi_start.addEventListener("click", function(e){
+                            e.domEvent.stopPropagation();
+                            // preventBubbling(1);
+                        });
+                        mymap.sendLonLatData(point_type, 1, re_lng, re_lat);
+
+                        point_type = 0;
+                        map.addOverlay(poi_home);
+                        // poi_home.enableDragging();
+                        poi_home.addEventListener("click", function(e){
+                            e.domEvent.stopPropagation();
+                            // preventBubbling(0);
+                        });
+                        mymap.sendLonLatData(point_type, 0, re_lng, re_lat);
+
+                        rout_list.push(poi_start);
+                        points.push(poi_start.getPosition());
+                        points.push(poi_home.getPosition());
+                        edit_points.push(poi_start.getPosition());
+                        edit_points.push(poi_home.getPosition());
+                        i++;
+                    }else{
+                        point_type = 2;
+                        mymap.sendLonLatData(point_type, 2, re_lng, re_lat);
+                        var poi_route = new BMap.Marker(re_point, {icon:poi_Icon});
+                        var label = new BMap.Label(num, {offset:new BMap.Size(15.5,7)});
+                        label.setStyle({
+                            background:'none',
+                            color:'#015572',
+                            border:'none',
+                            transform:'translateX(-50%)',
+                        });
+                        poi_route.setLabel(label);
+                        rout_list.push(poi_route);
+                        points.push(poi_route.getPosition());
+                        edit_points.push(poi_route.getPosition());
+                        map.addOverlay(poi_route);
+                        poi_route.addEventListener("click", function(e){
+                            e.domEvent.stopPropagation();
+                            // preventBubbling(poi_route.getLabel().content);
+                        });
+
+                    }
+
+                    addPolyline();
+                }else{
+                    return;
+                }
+
+
+            }
+        }
+        setTimeout(function() {
+            redraw = false;
+            num = len_max;
+        }, 2000);
+    }
+
+    //设置返航点位置
+    function rpToStart()
+    {
+        map.removeOverlay(poi_home);
+        poi_home = new BMap.Marker(points[0], {icon: home_Icon});
+        map.addOverlay(poi_home);
+        poi_home.addEventListener("click", function(e){
+			e.domEvent.stopPropagation();
+			preventBubbling(0);
+        });
+
+    }
+    function rpToCurrent()
+    {
+        map.removeOverlay(poi_home);
+        var home_lnglat = new BMap.Point(QGClng, QGClat);
+        poi_home = new BMap.Marker(home_lnglat, {icon: home_Icon});
+        map.addOverlay(poi_home);
+        poi_home.addEventListener("click", function(e){
+			e.domEvent.stopPropagation();
+			preventBubbling(0);
+        });
+
+    }
+    function rpToSelf()
+    {
+        poi_home.enableDragging();
+        poi_home.addEventListener("dragend", function(p){
+            home_lng = p.point.lng;
+            home_lat = p.point.lat;
+            mymap.sendHomeData(home_lng, home_lat);
+        });
+        poi_home.addEventListener("click", function(e){
+		    e.domEvent.stopPropagation();
+		    preventBubbling(0);
+        });
+    }
+
+	//改变地图类型
+	function normalMap()
+	{
+		map.setMapType(window.BMAP_NORMAL_MAP); //二维街道图
+	}
+
+	function hybridMap()
+	{
+		map.setMapType(window.BMAP_HYBRID_MAP); //卫星混合图
+	}
+
+	//改变地图缩放级别
+	function mapScalechange(value)
+	{
+		map.setZoom(value);
+	}
+
+	//地图回中操作
+	//设置无人机位置为中心
+	function aircraftCenter(){
+		if(setairCenter){
+            mks.setIcon(new_flightIcon);
+		}else{
+            mks.setIcon(flightIcon);
+        }
+        map.panTo(mks.getPosition());
+	}
+
+	//设置返航点为中心
+	function homeCenter(){
+		if(poi_home)
+		{
+			map.panTo(poi_home.getPosition());
+		}
+	}
+
+	//设置地面站位置为中心
+	function QGCCenter(){
+		if(setqgcCenter){
+            mk.setIcon(new_qgcIcon);
+		}else{
+            mk.setIcon(myIcon);
+        }
+        map.panTo(mk.getPosition());
+	}
+
+	//设置起飞点为中心
+	function startPoiCenter(){
+		if(poi_start)
+		{
+			map.panTo(poi_start.getPosition());
+		}
+	}
+
+    function cancleQGCCenter(){
+        map.panTo(new BMap.Point(QGClng, QGClat));
+        map.removeOverlay(mk);
+        var QGClnglat = new BMap.Point(QGClng, QGClat);
+        var new_QGCIcon = new BMap.Icon('qgcaddr.png', new BMap.Size(68,68), {anchor: new BMap.Size(15.5, 43)});
+        mk = new BMap.Marker(QGClnglat,{icon:new_QGCIcon});
+        map.addOverlay(mk); 
+    }
+
+
+	//显示航点
+	function showPointData(){
+		for(var i=0; i< rout_list.length; i++)
+		{
+			rout_list[i].show();
+		}
+	}
+	//隐藏航点
+	function hidePointData(){
+		for(var j=0; j< rout_list.length; j++)
+		{
+			rout_list[j].hide();
+		}
+	}
+
+	//显示航迹
+	function showLineData(){
+		rout_line.show();
+	}
+	//隐藏航迹
+	function hideLineData(){
+		rout_line.hide();
+	}
+
+    //测距
+    function dis_measuring(){
+        map.addEventListener("click", distance);
+
+    }
+    
+    function cancle_measure(){
+        map.removeEventListener("click", distance);
+        map.removeOverlay(white_poi_0);
+        map.removeOverlay(white_poi_1);
+        map.removeOverlay(point_N);
+        map.removeOverlay(point_S);
+        map.removeOverlay(point_E);
+        map.removeOverlay(point_W);
+        map.removeOverlay(polyline_1);
+        map.removeOverlay(polyline_2);
+        map.removeOverlay(polyline_3);
+        map.removeOverlay(polyline_4);
+        map.removeOverlay(dis_line);
+    }
+
+    
+    function distance(e){
+        var dis_poi = new BMap.Point(e.point.lng, e.point.lat);
+        distance_list.push(dis_poi);
+        var white_Icon = new BMap.Icon("white.png", new BMap.Size(7, 7), {anchor: new BMap.Size(5, 3)});
+
+        if(white_poi_0 != undefined){
+            if(white_poi_1 != undefined){
+                map.removeOverlay(white_poi_0);
+                white_poi_0 = undefined;
+                map.removeOverlay(white_poi_1);
+                white_poi_1 = undefined;
+                map.removeOverlay(point_N);
+                map.removeOverlay(point_S);
+                map.removeOverlay(point_E);
+                map.removeOverlay(point_W);
+                map.removeOverlay(polyline_1);
+                map.removeOverlay(polyline_2);
+                map.removeOverlay(polyline_3);
+                map.removeOverlay(polyline_4);
+                map.removeOverlay(dis_line);
+            }
+            
+        }
+
+        if(pam == 0){
+            pam++;
+            white_poi_0 = new BMap.Marker(distance_list[0], {icon:white_Icon});
+            map.addOverlay(white_poi_0);
+
+            var new_point_dis_1 = new BMap.Point(distance_list[0].lng,distance_list[0].lat + 0.0003);
+            var icon_N = new BMap.Icon("n.png", new BMap.Size(11, 7));
+            point_N = new BMap.Marker(new_point_dis_1,{icon:icon_N});
+            map.addOverlay(point_N);
+            var dis_label_n = new BMap.Label("N", {offset:new BMap.Size(5, -23)});
+            dis_label_n.setStyle({
+                background:'none',
+                color:'#F40B0C ',
+                border:'none',
+                fontSize:'20px',
+                transform:'translateX(-50%)',
+            });
+            point_N.setLabel(dis_label_n);
+
+            var new_point_dis_2 = new BMap.Point(distance_list[0].lng,distance_list[0].lat - 0.0003);
+            var icon_S = new BMap.Icon("s.png", new BMap.Size(11, 7), {anchor: new BMap.Size(5, 3)});
+            point_S = new BMap.Marker(new_point_dis_2,{icon:icon_S});
+            map.addOverlay(point_S);
+            var dis_label_s = new BMap.Label("S", {offset:new BMap.Size(5, 5)});
+            dis_label_s.setStyle({
+                background:'none',
+                color:'#F40B0C ',
+                border:'none',
+                fontSize:'20px',
+                transform:'translateX(-50%)',
+            });
+            point_S.setLabel(dis_label_s);
+
+            var new_point_dis_3 = new BMap.Point(distance_list[0].lng + 0.0003,distance_list[0].lat);
+            var icon_E = new BMap.Icon("e.png", new BMap.Size(7, 11), {offset:new BMap.Size(5, 0)});
+            point_E = new BMap.Marker(new_point_dis_3,{icon:icon_E});
+            map.addOverlay(point_E);
+            var dis_label_e = new BMap.Label("E", {offset:new BMap.Size(15, -7)});
+            dis_label_e.setStyle({
+                background:'none',
+                color:'#F40B0C ',
+                border:'none',
+                fontSize:'20px',
+                transform:'translateX(-50%)',
+            });
+            point_E.setLabel(dis_label_e);
+
+            var new_point_dis_4 = new BMap.Point(distance_list[0].lng - 0.0003,distance_list[0].lat);
+            var icon_W = new BMap.Icon("w.png", new BMap.Size(7, 11), {offset:new BMap.Size(-5, 0)});
+            point_W = new BMap.Marker(new_point_dis_4,{icon:icon_W});
+            map.addOverlay(point_W);
+            var dis_label_w = new BMap.Label("W", {offset:new BMap.Size(-15, -7)});
+            dis_label_w.setStyle({
+                background:'none',
+                color:'#F40B0C ',
+                border:'none',
+                fontSize:'20px',
+                transform:'translateX(-50%)',
+            });
+            point_W.setLabel(dis_label_w);
+
+            polyline_1 = new BMap.Polyline([distance_list[0],new_point_dis_1], {strokeColor:"#03A8F7", strokeWeight:2, strokeOpacity:1, strokeStyle:"dashed"});  //添加坐标
+            polyline_2 = new BMap.Polyline([distance_list[0],new_point_dis_2], {strokeColor:"#03A8F7", strokeWeight:2, strokeOpacity:1, strokeStyle:"dashed"});  //添加坐标
+            polyline_3 = new BMap.Polyline([distance_list[0],new_point_dis_3], {strokeColor:"#03A8F7", strokeWeight:2, strokeOpacity:1, strokeStyle:"dashed"});  //添加坐标
+            polyline_4 = new BMap.Polyline([distance_list[0],new_point_dis_4], {strokeColor:"#03A8F7", strokeWeight:2, strokeOpacity:1, strokeStyle:"dashed"});  //添加坐标
+
+            map.addOverlay(polyline_1);
+            map.addOverlay(polyline_2);
+            map.addOverlay(polyline_3);
+            map.addOverlay(polyline_4);
+
+        }else{
+            white_poi_1 = new BMap.Marker(distance_list[1], {icon:white_Icon});
+            map.addOverlay(white_poi_1);
+            addLine();
+            var dis_num = ((map.getDistance(distance_list[0],distance_list[1])).toFixed(1)+' 米');
+            var dis_label = new BMap.Label(dis_num, {offset:new BMap.Size(0, 5)});
+            dis_label.setStyle({
+                background:'none',
+                color:'blue',
+                border:'none',
+                fontSize:'20px',
+                transform:'translateX(-50%)',
+            });
+            white_poi_1.setLabel(dis_label);
+
+            var Angle = Math.atan((((distance_list[1].lng - distance_list[0].lng)/57.3) * Math.cos((distance_list[1].lat)/57.3))/((distance_list[1].lat - distance_list[0].lat)/57.3));
+            if(distance_list[1].lat<=distance_list[0].lat){
+                Angle = Angle + 180/57.3;
+            }else if(distance_list[1].lat>distance_list[0].lat&&distance_list[0].lng>distance_list[1].lng){
+                Angle = Angle + 360/57.3;
+            }
+            var Angle = ((Angle*57.3).toFixed(1)+'°');
+            var angle_label = new BMap.Label(Angle, {offset:new BMap.Size(0, 23)});
+            angle_label.setStyle({
+                background:'none',
+                color:'blue',
+                border:'none',
+                fontSize:'20px',
+                transform:'translateX(-50%)',
+            });
+            white_poi_1.setLabel(angle_label);
+            pam = 0;
+            distance_list = [];
+            
+        }
+    }
+
+    function addLine(){
+        dis_line = new BMap.Polyline([distance_list[0],distance_list[1]], {strokeColor:"#F40B0C", strokeWeight:3, strokeOpacity:1});
+        map.addOverlay(dis_line);
+    }
+   
+});
+
+
+
+//防止冒泡
+function preventBubbling(point_num){
+	//alert(point_num);
+	// e.domEvent.stopPropagation();
+	mymap.point_Edit_Statue(point_num);
+
+	//alert(e.point.lng);
+        // removePointEvent();
+}
+
+</script>

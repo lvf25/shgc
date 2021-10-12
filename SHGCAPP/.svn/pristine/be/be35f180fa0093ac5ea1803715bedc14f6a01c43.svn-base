@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"; charset="utf-8" />
+    <title>高德地图</title>
+    <style type="text/css">
+        html{height:100%}
+        body{height:100%;margin:0px;padding:0px}
+        #container{height:100%}
+        .input-card {
+                    width: 150px;height:100px;
+                    top: 1px;
+                    bottom: auto;
+                }
+    </style>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.14&key=daf534d734a9fca8de2c541d00b97082&&plugin=AMap.OverView"></script>
+    
+</head>
+
+<body>
+    <div id="container"></div>
+    <div class='input-card'>
+        <div class="input-item">
+            <input type="checkbox" id="overview" onclick="toggleOverViewShow(this)"/>显示鹰眼
+        </div>
+
+        <div class="input-item">
+                <input type="checkbox" id="overviewOpen" disabled onclick="toggleOverViewOpen(this)"/>展开鹰眼
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var overView = new AMap.OverView({
+            visible: false
+        }),
+
+        map = new AMap.Map('container', {
+          resizeEnable: true,
+          zoom: 10,
+          center: [113.23,23.16]
+        });
+        map.addControl(overView);
+
+    // map.setZoomAndCenter(14,[113.23,23.16]);
+        map.addControl(new AMap.MapTypeControl());   //添加地图类型控件
+        map.setCurrentCity("广州");          // 设置地图显示的城市 此项是必须设置的
+
+    // map.addControl(new AMap.MapTypeControl({
+    //   mapTypes[
+    //     AMAP_NORMAL_MAP,
+    //     AMAP_HYBRID_MAP
+    //   ]}));
+        map.enableScrollWheelZoom(true);  //启用滚轮放大缩小
+        map.enableKeyboard();       //启用键盘操作，默认禁用。键盘的上、下、左、右键可连续移动地图。
+        map.enableContinuousZoom();//启用连续缩放效果
+
+        function toggleOverViewShow(checkbox) {
+           if (checkbox.checked) {
+               overView.show();
+               document.getElementById('overviewOpen').disabled = false;
+           } else {
+               overView.hide();
+               document.getElementById('overviewOpen').disabled = true;
+           }
+       }
+       function toggleOverViewOpen(checkbox) {
+           if (checkbox.checked) {
+               overView.open();
+           }
+           else {
+               overView.close();
+           }
+           }
+
+    </script>
+<p>高德地图在线加载</p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+9b45d641d47b2eca2544bc256955a1eab5ea2b61 refs/remotes/origin/beidou_rtcm
+137a718aeb1b4e5c3e13e812ec762c3e2a284221 refs/remotes/origin/enable_debug_messages
+69e38ecc846df03f0bb71aa136bcc830dd3316a9 refs/remotes/origin/master
+2691b5b219f5054bd2fba64a6d71734a1f9dbcf7 refs/remotes/origin/pr-cmake
+22672278dfa3a30f2418d260d1ae3674ca915754 refs/remotes/origin/ubx_lower_baudrate

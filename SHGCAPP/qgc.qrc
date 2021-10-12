@@ -1,0 +1,276 @@
+<RCC>
+    <qresource prefix="/json">
+        <file alias="AutoConnect.SettingsGroup.json">Settings/AutoConnect.SettingsGroup.json</file>
+        <file alias="USBBoardInfo.json">comm/USBBoardInfo.json</file>
+        <file alias="App.SettingsGroup.json">Settings/App.SettingsGroup.json</file>
+        <file alias="Units.SettingsGroup.json">Settings/Units.SettingsGroup.json</file>
+        <file alias="Vehicle/VehicleFact.json">Vehicle/VehicleFact.json</file>
+        <file alias="Vehicle/BatteryFact.json">Vehicle/BatteryFact.json</file>
+        <file alias="Vehicle/ClockFact.json">Vehicle/ClockFact.json</file>
+        <file alias="Vehicle/DistanceSensorFact.json">Vehicle/DistanceSensorFact.json</file>
+        <file alias="Vehicle/EstimatorStatusFactGroup.json">Vehicle/EstimatorStatusFactGroup.json</file>
+        <file alias="Vehicle/GPSFact.json">Vehicle/GPSFact.json</file>
+        <file alias="Vehicle/GPSRTKFact.json">Vehicle/GPSRTKFact.json</file>
+        <file alias="Vehicle/SetpointFact.json">Vehicle/SetpointFact.json</file>
+        <file alias="Vehicle/SubmarineFact.json">Vehicle/SubmarineFact.json</file>
+        <file alias="Vehicle/TemperatureFact.json">Vehicle/TemperatureFact.json</file>
+        <file alias="Vehicle/VibrationFact.json">Vehicle/VibrationFact.json</file>
+        <file alias="Vehicle/WindFact.json">Vehicle/WindFact.json</file>
+        <file alias="RTK.SettingsGroup.json">Settings/RTK.SettingsGroup.json</file>
+        <file alias="APM/MavCmdInfoCommon.json">FirmwarePlugin/APM/MavCmdInfoCommon.json</file>
+        <file alias="APM/MavCmdInfoFixedWing.json">FirmwarePlugin/APM/MavCmdInfoFixedWing.json</file>
+        <file alias="APM/MavCmdInfoMultiRotor.json">FirmwarePlugin/APM/MavCmdInfoMultiRotor.json</file>
+        <file alias="APM/MavCmdInfoRover.json">FirmwarePlugin/APM/MavCmdInfoRover.json</file>
+        <file alias="APM/MavCmdInfoSub.json">FirmwarePlugin/APM/MavCmdInfoSub.json</file>
+        <file alias="APM/MavCmdInfoVTOL.json">FirmwarePlugin/APM/MavCmdInfoVTOL.json</file>
+        <file alias="PX4/MavCmdInfoCommon.json">FirmwarePlugin/PX4/MavCmdInfoCommon.json</file>
+        <file alias="PX4/MavCmdInfoFixedWing.json">FirmwarePlugin/PX4/MavCmdInfoFixedWing.json</file>
+        <file alias="PX4/MavCmdInfoMultiRotor.json">FirmwarePlugin/PX4/MavCmdInfoMultiRotor.json</file>
+        <file alias="PX4/MavCmdInfoRover.json">FirmwarePlugin/PX4/MavCmdInfoRover.json</file>
+        <file alias="PX4/MavCmdInfoSub.json">FirmwarePlugin/PX4/MavCmdInfoSub.json</file>
+        <file alias="PX4/MavCmdInfoVTOL.json">FirmwarePlugin/PX4/MavCmdInfoVTOL.json</file>
+        <file alias="MavCmdInfoCommon.json">MissionManager/MavCmdInfoCommon.json</file>
+        <file alias="MavCmdInfoFixedWing.json">MissionManager/MavCmdInfoFixedWing.json</file>
+        <file alias="MavCmdInfoMultiRotor.json">MissionManager/MavCmdInfoMultiRotor.json</file>
+        <file alias="MavCmdInfoRover.json">MissionManager/MavCmdInfoRover.json</file>
+        <file alias="MavCmdInfoSub.json">MissionManager/MavCmdInfoSub.json</file>
+        <file alias="MavCmdInfoVTOL.json">MissionManager/MavCmdInfoVTOL.json</file>
+        <file alias="FlightMap.SettingsGroup.json">Settings/FlightMap.SettingsGroup.json</file>
+        <file alias="FlyView.SettingsGroup.json">Settings/FlyView.SettingsGroup.json</file>
+        <file alias="PlanView.SettingsGroup.json">Settings/PlanView.SettingsGroup.json</file>
+        <file alias="CameraSection.FactMetaData.json">MissionManager/CameraSection.FactMetaData.json</file>
+        <file alias="SpeedSection.FactMetaData.json">MissionManager/SpeedSection.FactMetaData.json</file>
+        <file alias="MissionSettings.FactMetaData.json">MissionManager/MissionSettings.FactMetaData.json</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="ui/ellipse_N.png">resources/images/ui/ellipse_N.png</file>
+        <file>resources/images/ui/battery.png</file>
+        <file>resources/images/ui/flyaltitude.png</file>
+        <file>resources/images/ui/flydistance.png</file>
+        <file>resources/images/ui/gps.png</file>
+        <file>resources/images/ui/modeSelection.png</file>
+        <file>resources/images/ui/pc.png</file>
+        <file>resources/images/ui/radiosignal.png</file>
+        <file>resources/images/ui/remotecontrol.png</file>
+        <file>resources/images/ui/serialport.png</file>
+        <file>resources/images/ui/shihuanlogowhite.png</file>
+        <file>resources/images/ui/speed.png</file>
+        <file>resources/images/ui/calibration.png</file>
+        <file>resources/images/ui/logo_big.png</file>
+        <file>resources/images/ui/monitoring.png</file>
+        <file>resources/images/ui/routes.png</file>
+        <file>resources/images/ui/setUp.png</file>
+        <file>resources/images/ui/SHGCSetUp/choose.png</file>
+        <file>resources/images/ui/SHGCSetUp/clear.png</file>
+        <file>resources/images/ui/SHGCSetUp/dayuhao.png</file>
+        <file>resources/images/ui/SHGCSetUp/default.png</file>
+        <file>resources/images/ui/SHGCSetUp/flyabove.png</file>
+        <file>resources/images/ui/SHGCSetUp/flybelow.png</file>
+        <file>resources/images/ui/SHGCSetUp/goon.png</file>
+        <file>resources/images/ui/SHGCSetUp/listend.png</file>
+        <file>resources/images/ui/SHGCSetUp/liststart.png</file>
+        <file>resources/images/ui/SHGCSetUp/lowElecTip.png</file>
+        <file>resources/images/ui/SHGCSetUp/path.png</file>
+        <file>resources/images/ui/SHGCSetUp/return.png</file>
+        <file>resources/images/ui/SHGCSetUp/returnheight.png</file>
+        <file>resources/images/ui/SHGCSetUp/search.png</file>
+        <file>resources/images/ui/SHGCSetUp/set_return.png</file>
+        <file>resources/images/ui/SHGCSetUp/this.png</file>
+        <file>resources/images/ui/SHGCSetUp/timeRuler.png</file>
+        <file>resources/images/ui/SHGCSetUp/minusSign_gray.png</file>
+        <file>resources/images/ui/SHGCSetUp/plusSign_gray.png</file>
+        <file>resources/images/ui/SHGCSetUp/setup_continueFlyingExplain.png</file>
+        <file alias="Pause.svg">resources/images/Pause.svg</file>
+        <file alias="Play.svg">resources/images/Play.svg</file>
+        <file alias="cancelTheUpload.png">resources/images/ui/cancelTheUpload.png</file>
+        <file alias="upload.png">resources/images/ui/upload.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/CantClick_FV.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/CantClick_WLG.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/Con_waterLevelGauge.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/Con_waterLevelGauge_2.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/connectionSuccessfulAndSend.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/connectionSuccessfulAndSend_2.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/inputBoxNot.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/inputBoxOK.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/Ischecked.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/theRoundedRectangle_blue.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/Unc_waterLevelGauge.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/Unchecked.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/Unconnected.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/VelocimeterInteractiveWidget_background.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/VelocimeterInteractiveWidget_confirm.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/VelocimeterInteractiveWidget_setUp.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/velocimeterSetUpWidget_close.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/velocimeterSetUpWidget_plus.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/velocimeterSetUpWidget_reduce.png</file>
+        <file>resources/images/ui/flowVelocityMeasurement/velocimeterSetUpWidget_return.png</file>
+        <file>resources/images/ui/add_point.png</file>
+        <file>resources/images/ui/delete_point.png</file>
+        <file>resources/images/ui/down_point.png</file>
+        <file>resources/images/ui/up_point.png</file>
+        <file>resources/images/ui/SHGCPointEdit/angleDescription.png</file>
+        <file>resources/images/ui/SHGCPointEdit/angleExplain_theBlueQuestionMark.png</file>
+        <file>resources/images/ui/SHGCPointEdit/angleSelection_greyLines.png</file>
+        <file>resources/images/ui/SHGCPointEdit/angleSelection_Triangle.png</file>
+        <file>resources/images/ui/SHGCPointEdit/btn_point_Edit.png</file>
+        <file>resources/images/ui/SHGCPointEdit/globalSettings_spread.png</file>
+        <file>resources/images/ui/SHGCPointEdit/linearEditing_minusSign.png</file>
+        <file>resources/images/ui/SHGCPointEdit/linearEditing_plusSign.png</file>
+        <file>resources/images/ui/SHGCPointEdit/lineEdit_Frame.png</file>
+        <file>resources/images/ui/SHGCPointEdit/minusSign_blue.png</file>
+        <file>resources/images/ui/SHGCPointEdit/minusSign_gray.png</file>
+        <file>resources/images/ui/SHGCPointEdit/plusSign_blue.png</file>
+        <file>resources/images/ui/SHGCPointEdit/plusSign_gray.png</file>
+        <file>resources/images/ui/SHGCPointEdit/pointEditor_blue.png</file>
+        <file>resources/images/ui/SHGCPointEdit/singlePointEditing_blue.png</file>
+        <file>resources/images/ui/SHGCPointEdit/turningMode_bluebackground.png</file>
+        <file>resources/images/ui/SHGCPointEdit/turningMode_blueFrame.png</file>
+        <file>resources/images/ui/SHGCPointEdit/navigation_long.png</file>
+        <file>resources/images/ui/SHGCPointEdit/navigation_short.png</file>
+        <file>resources/images/ui/SHGCPointEdit/setBox_gray.png</file>
+    </qresource>
+    <qresource prefix="/qml">
+        <file alias="frmmap.qml">resources/qml/frmmap.qml</file>
+        <file>resources/qml/takeoff.png</file>
+        <file>resources/qml/takeoff_is.png</file>
+        <file>resources/qml/hover_is.png</file>
+        <file>resources/qml/takeoffContinue.png</file>
+        <file>resources/qml/turnback.png</file>
+        <file>resources/qml/turnback_is.png</file>
+        <file>resources/qml/hover2.png</file>
+        <file alias="ScreenTools.qml">resources/qml/ScreenTools.qml</file>
+        <file alias="GuidedActionConfirm.qml">resources/qml/GuidedActionConfirm.qml</file>
+        <file alias="GuidedActionsController.qml">resources/qml/GuidedActionsController.qml</file>
+        <file alias="SliderRectangle.qml">resources/qml/SliderRectangle.qml</file>
+        <file alias="FlightDataShowRectange.qml">resources/qml/FlightDataShowRectange.qml</file>
+        <file alias="MapToHtmlRectange.qml">resources/qml/MapToHtmlRectange.qml</file>
+        <file>resources/qml/lock_unlock_north.png</file>
+        <file>resources/qml/logShow.png</file>
+        <file>resources/qml/mapswitch.png</file>
+        <file>resources/qml/measuringFlowVelocity.png</file>
+        <file>resources/qml/north_unlock.png</file>
+        <file>resources/qml/positioning.png</file>
+        <file>resources/qml/waypoint.png</file>
+        <file alias="TopRectange.qml">resources/qml/TopRectange.qml</file>
+        <file alias="FlightPosition.qml">resources/qml/FlightPosition.qml</file>
+        <file>resources/qml/level_BottomFrame.png</file>
+        <file alias="PositionShow.qml">resources/qml/PositionShow.qml</file>
+        <file>resources/qml/white_starting_Location.png</file>
+        <file>resources/qml/white_starting_Location_Blue.png</file>
+        <file>resources/qml/thePlane_Location.png</file>
+        <file>resources/qml/thePlane_Location_Blue.png</file>
+        <file>resources/qml/white_turnback_Location.png</file>
+        <file>resources/qml/white_turnback_Location_Blue.png</file>
+        <file>resources/qml/white_my_Location.png</file>
+        <file>resources/qml/white_my_Location_Blue.png</file>
+        <file>resources/qml/white_my_Location_Blue1.png</file>
+        <file alias="SwitchButton.qml">resources/qml/SwitchButton.qml</file>
+        <file alias="SwitchRectange.qml">resources/qml/SwitchRectange.qml</file>
+        <file alias="MapChoose.qml">resources/qml/MapChoose.qml</file>
+        <file>resources/qml/mapSwitch_Frame.png</file>
+        <file>resources/qml/ATwo_dimensionalMap.png</file>
+        <file>resources/qml/SatelliteMaps.png</file>
+        <file alias="RoutePlanActionRectange.qml">resources/qml/RoutePlanActionRectange.qml</file>
+        <file>resources/qml/Clicked.png</file>
+        <file>resources/qml/clicked_Blue.png</file>
+        <file>resources/qml/Circular.png</file>
+        <file>resources/qml/DrawLine.png</file>
+        <file>resources/qml/Parallelogram.png</file>
+        <file>resources/qml/StraightLine.png</file>
+        <file>resources/qml/straightLine_Blue.png</file>
+        <file>resources/qml/circular_Blue.png</file>
+        <file alias="RoutePlanTopRectange.qml">resources/qml/RoutePlanTopRectange.qml</file>
+        <file>resources/qml/conversion.png</file>
+        <file>resources/qml/FlightControl.png</file>
+        <file>resources/qml/folder.png</file>
+        <file>resources/qml/scale.png</file>
+        <file>resources/qml/storage.png</file>
+        <file alias="AnctionWayPoint.qml">resources/qml/AnctionWayPoint.qml</file>
+        <file>resources/qml/delete.png</file>
+        <file>resources/qml/deleteAll.png</file>
+        <file>resources/qml/WithdrawOfTheNextStep.png</file>
+        <file>resources/qml/WithdrawThePreviousStep.png</file>
+        <file>resources/qml/DisConnectShow.qml</file>
+        <file alias="PlayView.qml">resources/qml/PlayView.qml</file>
+        <file alias="SHGCFileDialog.qml">resources/qml/SHGCFileDialog.qml</file>
+        <file>resources/qml/bg_flycontrol.png</file>
+        <file alias="DeleteConfirm.qml">resources/qml/deleteConfirm.qml</file>
+        <file alias="DeleteFlyControlWaypointTip.qml">resources/qml/DeleteFlyControlWaypointTip.qml</file>
+        <file alias="FlyControlOperating.qml">resources/qml/FlyControlOperating.qml</file>
+        <file alias="UploadRectange.qml">resources/qml/UploadRectange.qml</file>
+        <file alias="UploadShow.qml">resources/qml/UploadShow.qml</file>
+        <file alias="TableViewItem.qml">resources/qml/TableViewItem.qml</file>
+        <file>resources/qml/batteryVoltage.png</file>
+        <file>resources/qml/climbSpeed.png</file>
+        <file>resources/qml/flightAltitude.png</file>
+        <file>resources/qml/flightDistance.png</file>
+        <file>resources/qml/pc.png</file>
+        <file>resources/qml/radioSignal.png</file>
+        <file>resources/qml/remotecontrol.png</file>
+        <file>resources/qml/satellites.png</file>
+        <file>resources/qml/serialport.png</file>
+        <file>resources/qml/shihuanlogowhite.png</file>
+        <file>resources/qml/modeSelection.png</file>
+        <file alias="PowerDisplay.qml">resources/qml/PowerDisplay.qml</file>
+        <file>resources/qml/scale_Blue.png</file>
+        <file alias="StraightLineEdit.qml">resources/qml/StraightLineEdit.qml</file>
+        <file alias="CircleEdit.qml">resources/qml/CircleEdit.qml</file>
+        <file>resources/qml/close.png</file>
+        <file>resources/qml/description.png</file>
+        <file alias="SpinBox.qml">resources/qml/SpinBox.qml</file>
+        <file alias="ShowMessage.qml">resources/qml/ShowMessage.qml</file>
+        <file>resources/qml/close01.png</file>
+        <file>resources/qml/checkstartmission.png</file>
+        <file>resources/qml/uncheckstartmission.png</file>
+        <file>resources/qml/landing.png</file>
+        <file>resources/qml/unland.png</file>
+        <file alias="SHGClogplayer.qml">resources/qml/SHGClogplayer.qml</file>
+        <file>resources/qml/pause.png</file>
+        <file>resources/qml/play.png</file>
+        <file>resources/qml/closelog.png</file>
+        <file>resources/qml/openfile.png</file>
+        <file alias="SHGCChooseFile.qml">resources/qml/SHGCChooseFile.qml</file>
+        <file>resources/qml/openlogfile.png</file>
+        <file>resources/qml/closechooselogfile.png</file>
+        <file alias="SHGCLogTableView.qml">resources/qml/SHGCLogTableView.qml</file>
+        <file>resources/qml/disconnect.png</file>
+        <file alias="ShowAdjustRectange.qml">resources/qml/ShowAdjustRectange.qml</file>
+    </qresource>
+    <qresource prefix="/pages">
+        <file alias="blue.png">resources/pages/blue.png</file>
+        <file alias="flightaddr.png">resources/pages/flightaddr.png</file>
+        <file alias="gray.png">resources/pages/gray.png</file>
+        <file alias="home.png">resources/pages/home.png</file>
+        <file alias="jquery.1.9.1.js">resources/pages/jquery.1.9.1.js</file>
+        <file alias="location_locked.png">resources/pages/location_locked.png</file>
+        <file alias="lushu_min.js">resources/pages/lushu_min.js</file>
+        <file alias="plane_locked.png">resources/pages/plane_locked.png</file>
+        <file alias="pt_start.png">resources/pages/pt_start.png</file>
+        <file alias="qgcaddr.png">resources/pages/qgcaddr.png</file>
+        <file alias="start.png">resources/pages/start.png</file>
+        <file alias="baidumap.html">resources/pages/baidumap.html</file>
+        <file alias="e.png">resources/pages/e.png</file>
+        <file alias="n.png">resources/pages/n.png</file>
+        <file alias="s.png">resources/pages/s.png</file>
+        <file alias="w.png">resources/pages/w.png</file>
+        <file alias="white.png">resources/pages/white.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>FirmwarePlugin/APM/Copter3.5.OfflineEditing.params</file>
+        <file>FirmwarePlugin/APM/Plane3.7.OfflineEditing.params</file>
+        <file>AutoPilotPlugins/APM/APMAirframeFactMetaData.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Copter.3.3.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Copter.3.4.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Copter.3.5.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Copter.3.6.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Plane.3.3.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Plane.3.5.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Plane.3.7.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Plane.3.8.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Rover.3.0.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Rover.3.2.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Rover.3.4.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Sub.3.4.xml</file>
+        <file>FirmwarePlugin/APM/APMParameterFactMetaData.Sub.3.5.xml</file>
+    </qresource>
+</RCC>

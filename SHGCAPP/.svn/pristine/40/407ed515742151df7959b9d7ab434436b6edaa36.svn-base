@@ -1,0 +1,4103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>point_Edit_Widget</class>
+ <widget class="QDialog" name="point_Edit_Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>3999</width>
+    <height>2031</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(244, 248, 249);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_6">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="btn_Drag_widget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width:0;
+color: rgb(224, 234, 238);
+background-color: rgb(224, 234, 238);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../resources/images/ui/SHGCPointEdit/btn_point_Edit.png</normaloff>../resources/images/ui/SHGCPointEdit/btn_point_Edit.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>7</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="1">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <widget class="QWidget" name="widget_Top_btns" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>823</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">outline:0px;
+background: transparent;
+border-width:0;
+border-style:outset;</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QWidget" name="navigation_longWidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/images/resources/images/ui/SHGCPointEdit/navigation_long.png);
+outline:0px;
+border-width:0;
+border-style:outset;</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QPushButton" name="btn_setting">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>182</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="baseSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>思源黑体</family>
+                <pointsize>22</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::DefaultContextMenu</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">outline:0px;
+font: 22pt &quot;思源黑体&quot;;
+color: rgb(168, 184, 191);
+border-width:0;
+background: transparent;
+border-style:outset;
+
+
+
+</string>
+              </property>
+              <property name="text">
+               <string>全局设置</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoRepeatInterval">
+               <number>100</number>
+              </property>
+              <property name="autoDefault">
+               <bool>true</bool>
+              </property>
+              <property name="default">
+               <bool>false</bool>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_Edit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>182</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-image: url(:/images/pointEditor_blue.png);
+outline:0px;
+font: 22pt &quot;思源黑体&quot;;
+color: rgb(168, 184, 191);
+border-width:0;
+border-style:outset;</string>
+              </property>
+              <property name="text">
+               <string>航点编辑</string>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_Back_point">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>183</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">outline:0px;
+font: 22pt &quot;思源黑体&quot;;
+color: rgb(168, 184, 191);
+border-width:0;
+background: transparent;
+border-style:outset;
+</string>
+              </property>
+              <property name="text">
+               <string>返航点</string>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="1">
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="0">
+          <widget class="QWidget" name="widget_point_edit" native="true">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">outline:0px;
+background: transparent;
+border-width:0;
+border-style:outset;</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_edit" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>267</width>
+                <height>59</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-image: url(:/images/navigation_short.png);
+outline:0px;
+border-width:0;
+border-style:outset;</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="btn_onePoint_Edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>134</width>
+                   <height>59</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">outline:0px;
+font: 22pt &quot;思源黑体&quot;;
+color: rgb(168, 184, 191);
+border-width:0;
+background: transparent;
+border-style:outset;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>单点编辑</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_allPoint_Edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>134</width>
+                   <height>59</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-image: url(:/images/resources/images/ui/SHGCPointEdit/singlePointEditing_blue.png);
+outline:0px;
+font: 22pt &quot;思源黑体&quot;;
+color: rgb(168, 184, 191);
+border-width:0;
+border-style:outset;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>批量编辑</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="styleSheet">
+         <string notr="true">outline:0px;
+border-width:0;
+border-style:outset;</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QScrollArea" name="singlePointEditing_scrollArea">
+           <property name="minimumSize">
+            <size>
+             <width>660</width>
+             <height>900</height>
+            </size>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents_SPE">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>660</width>
+              <height>1800</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>660</width>
+              <height>1280</height>
+             </size>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0">
+              <widget class="QWidget" name="PointEditing_widget" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QWidget" name="widget_5" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;序号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="serialNumber_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_5">
+                      <item>
+                       <widget class="QPushButton" name="US_serialNumber_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/serialNumber_moveUpward_darkGrey.png</normaloff>:/images/serialNumber_moveUpward_darkGrey.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>19</width>
+                          <height>21</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="serialNumber_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="DS_serialNumber_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/serialNumber_moveDown_darkGrey.png</normaloff>:/images/serialNumber_moveDown_darkGrey.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>19</width>
+                          <height>21</height>
+                         </size>
+                        </property>
+                        <property name="autoDefault">
+                         <bool>true</bool>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_9" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_19">
+                   <item>
+                    <widget class="QLabel" name="label_2">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;经度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="longitude_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_17">
+                      <item>
+                       <widget class="QLineEdit" name="longitude_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>214</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_10" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_20">
+                   <item>
+                    <widget class="QLabel" name="label_3">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;纬度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="latitude_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_16">
+                      <item>
+                       <widget class="QLineEdit" name="latitude_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>214</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_11" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_21">
+                   <item>
+                    <widget class="QLabel" name="label_4">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;相对起飞&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;点高度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="takeoffAltitude_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_6">
+                      <item>
+                       <widget class="QPushButton" name="MS_takeoffAltitude_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="takeoffAltitude_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_takeoffAltitude_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_11">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_12" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_22">
+                   <item>
+                    <widget class="QLabel" name="label_5">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;相对上一&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;航点距离&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="relativeDistance_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_7">
+                      <item>
+                       <widget class="QPushButton" name="MS_relativeDistance_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="relativeDistance_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_relativeDistance_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_12">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_13" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_23">
+                   <item>
+                    <widget class="QLabel" name="label_6">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;绝对角度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="absoluteAngle_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_8">
+                      <item>
+                       <widget class="QPushButton" name="MS_absoluteAngle_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="absoluteAngle_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_absoluteAngle_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_13">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#333333;&quot;&gt;°&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_14" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_24">
+                   <item>
+                    <widget class="QLabel" name="label_7">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;水平速度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="horizontalVelocity_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_9">
+                      <item>
+                       <widget class="QPushButton" name="MS_horizontalVelocity_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="horizontalVelocity_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_horizontalVelocity_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_14">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m/s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_15" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_25">
+                   <item>
+                    <widget class="QLabel" name="label_8">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;垂直速度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="verticalVelocity_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_10">
+                      <item>
+                       <widget class="QPushButton" name="MS_verticalVelocity__pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="verticalVelocity_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_verticalVelocity__pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_15">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m/s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_16" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_26">
+                   <item>
+                    <widget class="QLabel" name="label_9">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;坡度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="slope_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_11">
+                      <item>
+                       <widget class="QPushButton" name="MS_slope_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="slope_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_slope_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_16">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_17" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_27">
+                   <item>
+                    <widget class="QLabel" name="label_10">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;坡角&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="slopeAngle_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_12">
+                      <item>
+                       <widget class="QPushButton" name="MS_slopeAngle_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="slopeAngle_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_slopeAngle_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_17">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#333333;&quot;&gt;°&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_18" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_28">
+                   <item>
+                    <widget class="QLabel" name="label_18">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;转弯模式&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="coordinatedTurn_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                     </property>
+                     <widget class="QPushButton" name="coordinatedTurn_pushButton_SPE">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>107</width>
+                        <height>59</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>107</width>
+                        <height>59</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>思源黑体</family>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#coordinatedTurn_pushButton_SPE:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#coordinatedTurn_pushButton_SPE:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>协调转弯</string>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="rollTurn_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                     </property>
+                     <widget class="QPushButton" name="rollTurn_pushButton_SPE">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>107</width>
+                        <height>59</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>107</width>
+                        <height>59</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>思源黑体</family>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#rollTurn_pushButton_SPE:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#rollTurn_pushButton_SPE:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>侧倾转弯</string>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="stopTurning_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                     </property>
+                     <widget class="QPushButton" name="stopTurning_pushButton_SPE">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>107</width>
+                        <height>59</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>107</width>
+                        <height>59</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>思源黑体</family>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#stopTurning_pushButton_SPE:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#stopTurning_pushButton_SPE:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>停止转弯</string>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_19" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_29">
+                   <item>
+                    <widget class="QLabel" name="label_19">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;机头朝向&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="noseOrientation_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_15">
+                      <item>
+                       <widget class="QLineEdit" name="noseOrientation_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>214</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_20">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#333333;&quot;&gt;°&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_20" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_30">
+                   <item>
+                    <widget class="QLabel" name="label_21">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;停留时间&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="residenceTime_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_13">
+                      <item>
+                       <widget class="QPushButton" name="MS_residenceTime_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="residenceTime_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="PS_residenceTime_pushButton_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>59</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="flat">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_22">
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#333333;&quot;&gt;s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_21" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_31">
+                   <item>
+                    <widget class="QLabel" name="label_23">
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;动作&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="action_widget_SPE" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>214</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_14">
+                      <item>
+                       <widget class="QLineEdit" name="action_lineEdit_SPE">
+                        <property name="minimumSize">
+                         <size>
+                          <width>214</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Source Han Sans CN</family>
+                          <pointsize>16</pointsize>
+                         </font>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="globalSettings_scrollArea">
+           <property name="minimumSize">
+            <size>
+             <width>660</width>
+             <height>1800</height>
+            </size>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents_GS">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>660</width>
+              <height>2800</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>660</width>
+              <height>2800</height>
+             </size>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_9">
+             <item row="0" column="0">
+              <widget class="QWidget" name="globalSettings_widget" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>660</width>
+                 <height>2800</height>
+                </size>
+               </property>
+               <widget class="QWidget" name="widget_4" native="true">
+                <property name="geometry">
+                 <rect>
+                  <x>-3</x>
+                  <y>-1</y>
+                  <width>661</width>
+                  <height>1800</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>620</width>
+                  <height>1761</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QWidget" name="widget_8" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>620</width>
+                     <height>680</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <widget class="QLabel" name="label_29">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>0</y>
+                      <width>551</width>
+                      <height>21</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#6d6d6d;&quot;&gt;不设置数值则以每个航点设置的数值为准&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_28">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>40</y>
+                      <width>501</width>
+                      <height>21</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#6d6d6d;&quot;&gt;以下设置将应用到全部航点&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="takeoffAltitude_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>110</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="MS_takeoffAltitude_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="PS_takeoffAltitude_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>150</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="takeoffAltitude_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>60</x>
+                       <y>0</y>
+                       <width>90</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_80">
+                    <property name="geometry">
+                     <rect>
+                      <x>420</x>
+                      <y>110</y>
+                      <width>31</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_73">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>100</y>
+                      <width>91</width>
+                      <height>81</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;相对起飞&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;点高度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="stopTurning_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>440</x>
+                      <y>490</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="stopTurning_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#stopTurning_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#stopTurning_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>停止转弯</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_84">
+                    <property name="geometry">
+                     <rect>
+                      <x>420</x>
+                      <y>400</y>
+                      <width>41</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m/s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_83">
+                    <property name="geometry">
+                     <rect>
+                      <x>420</x>
+                      <y>310</y>
+                      <width>41</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m/s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_77">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>410</y>
+                      <width>91</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;垂直速度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_76">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>320</y>
+                      <width>91</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;水平速度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="verticalVelocity_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>400</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="MS_verticalVelocity__pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="PS_verticalVelocity__pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>150</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="verticalVelocity_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>60</x>
+                       <y>0</y>
+                       <width>90</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_74">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>210</y>
+                      <width>91</width>
+                      <height>81</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;相对上一&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;航点距离&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="horizontalVelocity_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>310</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="MS_horizontalVelocity_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="PS_horizontalVelocity_pushButton_Gs">
+                     <property name="geometry">
+                      <rect>
+                       <x>150</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="horizontalVelocity_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>60</x>
+                       <y>0</y>
+                       <width>90</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QWidget" name="rollTurn_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>310</x>
+                      <y>490</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="rollTurn_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#rollTurn_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#rollTurn_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>侧倾转弯</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QWidget" name="relativeDistance_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>210</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="MS_relativeDistance_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="PS_relativeDistance_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>150</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="relativeDistance_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>60</x>
+                       <y>0</y>
+                       <width>90</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_87">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>500</y>
+                      <width>81</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;转弯模式&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_81">
+                    <property name="geometry">
+                     <rect>
+                      <x>420</x>
+                      <y>210</y>
+                      <width>31</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#333333;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="coordinatedTurn_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>490</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="coordinatedTurn_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#coordinatedTurn_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#coordinatedTurn_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>协调转弯</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QPushButton" name="angleExplain_pushButton_GS">
+                    <property name="geometry">
+                     <rect>
+                      <x>550</x>
+                      <y>600</y>
+                      <width>48</width>
+                      <height>48</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>48</width>
+                      <height>48</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>:/images/angleExplain_theBlueQuestionMark.png</normaloff>:/images/angleExplain_theBlueQuestionMark.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>48</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="widget_6" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>310</x>
+                      <y>600</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);
+outline:0px;
+border-width:0;
+border-style:outset;</string>
+                    </property>
+                    <widget class="QPushButton" name="angleSelection_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>146</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/angleSelection_Triangle.png</normaloff>:/images/angleSelection_Triangle.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="angleSelection_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>145</width>
+                       <height>61</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>145</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">outline:0px;
+background: transparent;
+border-width:0;
+border-style:outset;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QWidget" name="noseOrientation_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>160</x>
+                      <y>600</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/noseOrientation_Frame.png);</string>
+                    </property>
+                    <widget class="QLineEdit" name="noseOrientation_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_89">
+                    <property name="geometry">
+                     <rect>
+                      <x>280</x>
+                      <y>600</y>
+                      <width>21</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#333333;&quot;&gt;°&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_88">
+                    <property name="geometry">
+                     <rect>
+                      <x>60</x>
+                      <y>610</y>
+                      <width>81</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;机头朝向&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QPushButton" name="spread_pushButton_GS">
+                    <property name="geometry">
+                     <rect>
+                      <x>490</x>
+                      <y>350</y>
+                      <width>59</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>59</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>:/images/globalSettings_spread.png</normaloff>:/images/globalSettings_spread.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>59</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="angleExplain_widget_GS" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>620</width>
+                     <height>480</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-image: url(:/images/noseOrientation_Explain.png);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_7" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>620</width>
+                     <height>370</height>
+                    </size>
+                   </property>
+                   <widget class="QWidget" name="endOfMission_cycle_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>460</x>
+                      <y>290</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="endOfMission_cycle_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#endOfMission_cycle_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#endOfMission_cycle_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>循环</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QWidget" name="endOfMission_turnBack_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>290</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="endOfMission_turnBack_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#endOfMission_turnBack_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#endOfMission_turnBack_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>返航</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QWidget" name="endOfMission_hover_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>320</x>
+                      <y>290</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="endOfMission_hover_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#endOfMission_hover_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#endOfMission_hover_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>悬停</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_93">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>280</y>
+                      <width>81</width>
+                      <height>71</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;任务结束&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;后动作&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_27">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>200</y>
+                      <width>371</width>
+                      <height>71</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'PingFang SC,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Source Han Sans,Noto Sans CJK Sc,Microsoft YaHei,Microsoft Jhenghei,sans-serif'; font-size:14pt; color:#6d6d6d; background-color:#f4f7fd;&quot;&gt;当电池电量不足时将会返航并记录下当前任&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'PingFang SC,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Source Han Sans,Noto Sans CJK Sc,Microsoft YaHei,Microsoft Jhenghei,sans-serif'; font-size:14pt; color:#6d6d6d; background-color:#f4f7fd;&quot;&gt;务情况，重新飞行后再续飞未完的任务&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_92">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>140</y>
+                      <width>81</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;断点续飞&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="SwitchButton" name="breakpointContinueToFly_SwitchButton" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>130</y>
+                      <width>131</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_90">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>50</y>
+                      <width>81</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;停留时间&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="residenceTime_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>40</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="MS_residenceTime_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="PS_residenceTime_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>150</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="residenceTime_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>60</x>
+                       <y>0</y>
+                       <width>90</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_91">
+                    <property name="geometry">
+                     <rect>
+                      <x>420</x>
+                      <y>40</y>
+                      <width>41</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#333333;&quot;&gt;s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="cycle_widget_GS" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>620</width>
+                     <height>230</height>
+                    </size>
+                   </property>
+                   <widget class="QLabel" name="label_94">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>40</y>
+                      <width>81</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;循环圈数&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="theCycleNumber_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>30</y>
+                      <width>214</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>214</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/setBox_gray.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="MS_theCycleNumberpushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/minusSign_gray.png</normaloff>:/images/minusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="PS_theCycleNumber_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>150</x>
+                       <y>0</y>
+                       <width>59</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/images/plusSign_gray.png</normaloff>:/images/plusSign_gray.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>59</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="theCycleNumber_lineEdit_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>60</x>
+                       <y>0</y>
+                       <width>90</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Source Han Sans CN</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_95">
+                    <property name="geometry">
+                     <rect>
+                      <x>70</x>
+                      <y>130</y>
+                      <width>81</width>
+                      <height>71</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>思源黑体</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;循环结束&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#333333;&quot;&gt;后动作&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="endOfCycle_turnBack_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>140</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="endOfCycle_turnBack_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#endOfCycle_turnBack_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#endOfCycle_turnBack_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>返航</string>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QLabel" name="label_96">
+                    <property name="geometry">
+                     <rect>
+                      <x>420</x>
+                      <y>30</y>
+                      <width>41</width>
+                      <height>61</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Source Han Sans CN</family>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#333333;&quot;&gt;圈&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QWidget" name="endOfCycle_hover_widget_GS" native="true">
+                    <property name="geometry">
+                     <rect>
+                      <x>320</x>
+                      <y>140</y>
+                      <width>107</width>
+                      <height>59</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>107</width>
+                      <height>59</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-image: url(:/images/turningMode_blueFrame.png);</string>
+                    </property>
+                    <widget class="QPushButton" name="endOfCycle_hover_pushButton_GS">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>107</width>
+                       <height>59</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>59</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>思源黑体</family>
+                       <pointsize>14</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#endOfCycle_hover_pushButton_GS:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#endOfCycle_hover_pushButton_GS:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>悬停</string>
+                     </property>
+                    </widget>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="returnPoint_widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>680</width>
+             <height>900</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <widget class="QLabel" name="label_70">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>20</y>
+              <width>241</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Source Han Sans CN</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#6d6d6d;&quot;&gt;返航点为飞机降落的位置&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QWidget" name="setTakeoffPoint_widget_RP" native="true">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>80</y>
+              <width>334</width>
+              <height>59</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>334</width>
+              <height>59</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/images/returnPoint_setUp_blueFrame.png);</string>
+            </property>
+            <widget class="QPushButton" name="setTakeoffPoint_pushButton_RP">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>334</width>
+               <height>59</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>334</width>
+               <height>59</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>思源黑体</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#setTakeoffPoint_pushButton_RP:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#setTakeoffPoint_pushButton_RP:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+             </property>
+             <property name="text">
+              <string>设置为起飞点</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="setMyPosition_widget_RP" native="true">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>180</y>
+              <width>334</width>
+              <height>59</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>334</width>
+              <height>59</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/images/returnPoint_setUp_blueFrame.png);</string>
+            </property>
+            <widget class="QPushButton" name="setMyPosition_pushButton_RP">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>334</width>
+               <height>59</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>334</width>
+               <height>59</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>思源黑体</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#setMyPosition_pushButton_RP:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#setMyPosition_pushButton_RP:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+             </property>
+             <property name="text">
+              <string>设置为我的位置</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="manualSettings_widget_RP" native="true">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>280</y>
+              <width>334</width>
+              <height>59</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>334</width>
+              <height>59</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/images/returnPoint_setUp_blueFrame.png);</string>
+            </property>
+            <widget class="QPushButton" name="manualSettings_pushButton_RP">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>334</width>
+               <height>59</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>334</width>
+               <height>59</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>思源黑体</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background:url(); background-repeat: no-repeat;background-position:left;border:none;color:rgb(3,168,247);}
+
+QPushButton#manualSettings_pushButton_RP:hover{
+background-color:&quot;#03A8F7&quot;;color:rgb(254,254,254);
+}
+
+QPushButton#manualSettings_pushButton_RP:pressed{
+background-color:&quot;#03A8F7&quot;;color:(254,254,254);
+}</string>
+             </property>
+             <property name="text">
+              <string>手动设置</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QLabel" name="label_24">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>380</y>
+              <width>401</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>思源黑体</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'PingFang SC,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Source Han Sans,Noto Sans CJK Sc,Microsoft YaHei,Microsoft Jhenghei,sans-serif'; font-size:16pt; color:#6d6d6d; background-color:#f4f7fd;&quot;&gt;选择手动设置时，请在地图上选择一个&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'PingFang SC,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Source Han Sans,Noto Sans CJK Sc,Microsoft YaHei,Microsoft Jhenghei,sans-serif'; font-size:16pt; color:#6d6d6d; background-color:#f4f7fd;&quot;&gt;位置，点击此位置，将此位置设为回收点。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QWidget" name="widget_3" native="true">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>490</y>
+              <width>334</width>
+              <height>178</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>334</width>
+              <height>178</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/images/returnPoint_setUp_outsideFrame.png);
+
+outline:0px;
+border-width:0;
+border-style:outset;</string>
+            </property>
+            <widget class="QLabel" name="label_25">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>20</y>
+               <width>54</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>思源黑体</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">outline:0px;
+border-width:0;
+background: transparent;
+border-style:outset;</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#333333;&quot;&gt;经度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_26">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>110</y>
+               <width>54</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>思源黑体</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">outline:0px;
+border-width:0;
+background: transparent;
+border-style:outset;</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#333333;&quot;&gt;纬度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+            <widget class="QWidget" name="longitude_widget_RP" native="true">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>10</y>
+               <width>214</width>
+               <height>59</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>214</width>
+               <height>59</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/images/setBox_gray.png);
+</string>
+             </property>
+             <widget class="QLineEdit" name="longitude_lineEdit_RP">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>214</width>
+                <height>59</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>214</width>
+                <height>59</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="latitude_widget_RP" native="true">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>100</y>
+               <width>214</width>
+               <height>59</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>214</width>
+               <height>59</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/images/setBox_gray.png);
+</string>
+             </property>
+             <widget class="QLineEdit" name="latitude_lineEdit_RP">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>214</width>
+                <height>59</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>214</width>
+                <height>59</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Source Han Sans CN</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="all_points_Edit_ScrollArea">
+           <property name="minimumSize">
+            <size>
+             <width>1920</width>
+             <height>1040</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">outline:0px;
+border-width:0;
+border-style:outset;</string>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents_APE">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1920</width>
+              <height>1800</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">outline:0px;
+border-width:0;
+border-style:outset;</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="1" column="0">
+              <widget class="QTableView" name="pointEditTableView">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(0, 0, 0);
+selection-background-color: rgb(3, 168, 247);
+alternate-background-color: rgb(3, 168, 247);
+gridline-color: rgb(209, 230, 239);
+outline:0px;
+border-width:0;
+border-style:outset;</string>
+               </property>
+               <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarAsNeeded</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SwitchButton</class>
+   <extends>QWidget</extends>
+   <header location="global">switchbutton.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
